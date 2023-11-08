@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                echo env.BUILD_NUMBER
+                echo env.BUILD_URL
+                echo env.JOB_NAME
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                echo 'Deploying HARD....'
+            }
+        }
+    }
+}
