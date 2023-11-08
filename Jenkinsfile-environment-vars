@@ -10,7 +10,7 @@ pipeline {
                 echo env.BUILD_NUMBER
                 echo env.BUILD_URL
                 echo env.JOB_NAME
-                echo 'My name is ' env.name
+                echo 'My name is ' + env.name
             }
         }
         stage('Test') {
