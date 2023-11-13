@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    triggers {
+        cron '''TZ=America/Toronto
+        * * * * *'''
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                echo 'Deploying HARD....'
+            }
+        }
+    }
+}
