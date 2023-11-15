@@ -3,10 +3,19 @@ pipeline {
         docker { image 'node:20.9.0-alpine3.18' }
     }
     stages {
+        stage('Pre-Start'){
+            sh 'echo This is a good stage, the best!'
+        }
         stage('Debug') {
             steps {
                 sh 'node --version'
             }
         }
+        stage('Finishing') {
+            steps {
+                sh 'echo This is a good stage, the best and the last!'
+            }
+        }
+
     }
 }
