@@ -4,7 +4,9 @@ pipeline {
     }
     stages {
         stage('Pre-Start'){
-            sh 'echo This is a good stage, the best!'
+            steps {
+                sh 'echo This is a good stage, the best!'
+            }
         }
         stage('Debug') {
             steps {
