@@ -1,12 +1,13 @@
 pipeline {
     agent {
-        dockerContainer { image 'node:20.9.0-alpine3.18' }
+        docker { 
+            image 'node:20.9.0-alpine3.18' 
+            args "-u root"
+            }
     }
     stages {
         stage('Debug') {
             steps {
-                sh 'docker version'
-                sh 'docker images'
                 sh 'node --version'
             }
         }
