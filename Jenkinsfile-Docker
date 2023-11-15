@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Debug') {
             steps {
-                sh 'whoami'
+                sh 'echo This is a good stage, the debug best!'
             }
         }
         stage('Finishing') {
