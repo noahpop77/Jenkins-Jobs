@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'echo Hello World!'
                 sh 'echo customEnvVar = $customEnvVar'
+                sh 'echo otherEnvVar = $otherEnvVar'
             }
         }
         stage('Cleanup') {
