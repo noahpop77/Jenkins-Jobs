@@ -1,0 +1,25 @@
+pipeline {
+    agent { dockerfile true }
+        stages {
+        stage('Preparing') {
+            steps {
+                sh 'echo Preparing...'
+            }
+        }
+    }
+    stages {
+        stage('Running Docker File') {
+            steps {
+                sh 'echo Hello World!'
+                sh 'echo customEnvVar = $customEnvVar'
+            }
+        }
+    }
+    stages {
+        stage('Cleanup') {
+            steps {
+                sh 'echo Cleanup...'
+            }
+        }
+    }
+}
